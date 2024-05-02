@@ -32,8 +32,16 @@ require("lazy").setup({
         end,
     },
 
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		config = true
+		-- use opts = {} for passing setup options
+		-- this is equalent to setup({}) function
+	},
+
     -- Git stuff on command line
-    { "tpope/vim-fugitive", cmd = "Git" },
+	{ "tpope/vim-fugitive", cmd = "Git" },
 
     -- "gc" to comment visual regions/lines, gcc to toggle line comment
     { "numToStr/Comment.nvim", opts = {} },
