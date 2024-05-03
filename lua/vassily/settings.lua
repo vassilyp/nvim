@@ -62,7 +62,7 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 -- Autosave
-vim.opt.autowriteall = true
+vim.opt.autowriteall = false
 
 -- No wrap
 vim.opt.wrap = false

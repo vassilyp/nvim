@@ -3,10 +3,27 @@ local themes = require("telescope.themes")
 
 telescope.setup({
 	-- See :help telescope.setup() for default mappings/updates/etc
-
+	pickers = {
+		find_files = {
+			find_command = {
+				"rg",
+				"--no-ignore",
+				"--hidden",
+				"--files",
+				"-g",
+				"!**/node_modules/*",
+				"-g",
+				"!**/.git/*",
+			},
+		},
+	},
 	extensions = {
 		["ui-select"] = {
 			themes.get_dropdown(),
+		},
+		file_browser = {
+			hidden = { file_browser = true, folder_browser = true },
+			prompt_path = true,
 		},
 	},
 })
