@@ -63,6 +63,6 @@ vim.opt.wrap = false
 
 -- Indenting settings
 vim.opt.tabstop=4
-vim.opt.softtabstop=0
-vim.opt.expandtab=false
+vim.opt.softtabstop=4
+vim.opt.expandtab=true
 vim.opt.shiftwidth=4
