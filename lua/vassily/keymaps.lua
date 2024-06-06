@@ -1,7 +1,7 @@
 -- This is for shortcuts to do things quicker! (Not plugin specific)
 
--- Go back to [D]irectory [V]iew with dv
-vim.keymap.set("n", "<leader>dv", vim.cmd.Ex)
+-- [As]scend to directory view
+vim.keymap.set("n", "<leader>as", vim.cmd.Ex)
 
 -- Clear highlight with Escape in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
