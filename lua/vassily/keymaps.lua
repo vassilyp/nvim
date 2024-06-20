@@ -47,4 +47,3 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 -- Similar, except cut/paste
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
-
