@@ -64,6 +64,3 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 
--- Change split border color to light grey
-vim.o.laststatus = 3
-vim.api.nvim_set_hl(0, "WinSeparator", { fg='LightGrey' })
