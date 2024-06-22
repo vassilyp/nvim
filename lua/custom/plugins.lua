@@ -42,20 +42,7 @@ require("lazy").setup({
     -- "gc" to comment visual regions/lines, gcc to toggle line comment
     { "numToStr/Comment.nvim", opts = {} },
 
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
-    -- see :help gitsigns
-    {
-        "lewis6991/gitsigns.nvim",
-        opts = {
-            signs = {
-                add = { text = "+" },
-                change = { text = "~" },
-                delete = { text = "_" },
-                topdelete = { text = "‾" },
-                changedelete = { text = "~" },
-            },
-        },
-    },
+    require 'custom/plugins/gitsigns',
 
     { -- Autocompletion
         "hrsh7th/nvim-cmp",
