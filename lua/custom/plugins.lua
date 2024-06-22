@@ -38,7 +38,6 @@ require("lazy").setup({
 
     require 'custom/plugins/treesitter',
 
-
     require 'custom/plugins/todo-comments',
 
     require 'custom/plugins/mini',
