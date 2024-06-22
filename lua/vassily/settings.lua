@@ -1,5 +1,8 @@
 -- This is for global configuration changes
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- I have a Nerd font
 vim.g.have_nerd_font = true
 
