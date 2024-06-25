@@ -18,13 +18,14 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
+    -- Commenting for ts/jsx
+    require 'custom/plugins/ts-context-commentstring',
+
     require 'custom/plugins/toggleterm',
 
     require 'custom/plugins/colorscheme',
 
     require 'custom/plugins/autopairs',
-
-    require 'custom/plugins/comment',
 
     require 'custom/plugins/gitsigns',
 
