@@ -1,7 +1,7 @@
 -- This is for shortcuts to do things quicker! (Not plugin specific)
 
--- [As]scend to directory view
-vim.keymap.set("n", "<leader>as", vim.cmd.Ex)
+-- [F]ile Explorer
+vim.keymap.set("n", "<leader>f", vim.cmd.Ex)
 
 -- Clear highlight with Escape in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -15,11 +15,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- Exit terminal mode easier
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- shortcuts for opening splits
-vim.keymap.set('n', '<leader>sh', ':split<CR>', { desc = '[S]plit [H]orizontal' })
-vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { desc = '[S]plit [V]ertical' })
-
 -- Easier split navigation
+vim.keymap.set('n', '<leader>vv', '<C-w>L', { desc = 'Move split from horizontal to vertical' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
