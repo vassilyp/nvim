@@ -1,8 +1,5 @@
 -- This is for shortcuts to do things quicker! (Not plugin specific)
 
--- [F]ile Explorer
-vim.keymap.set("n", "<leader>f", vim.cmd.Ex)
-
 -- Clear highlight with Escape in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 

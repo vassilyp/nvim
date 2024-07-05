@@ -43,4 +43,6 @@ require("lazy").setup({
 
     require 'custom/plugins/mini',
 
+    require 'custom/plugins/oil',
+
 })
