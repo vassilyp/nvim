@@ -49,8 +49,8 @@ vim.opt.cursorline  = true
 -- Min number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Set highlight on search
-vim.opt.hlsearch = true
+-- Set (no) highlight on search
+vim.opt.hlsearch = false
 
 -- Autosave
 vim.opt.autowriteall = false
