@@ -19,29 +19,26 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Enable moving highlighted text with J and K (similar to ALT-[Up|Down] in VSCode)
-vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text up with J" })
+vim.keymap.set('v', "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text down with K" })
 
--- Keep cursor in place when using J to 'staple' lines together
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Staple lines together" })
 
--- Keep cursor in the middle for half-page jumps
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll a half-page down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll a half-page up" })
 
 -- Keep search result in middle when going to next/prev
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv", { desc = "Search next" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Search prev" })
 
 -- Keep paste buffer the same when pasting over highlighted text
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "Paste over selected text" })
 
 -- How to copy/paste using system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
+vim.keymap.set("v", "<leader>y", "\"+y", { desc = "Copy selected text to system clipboard" })
+vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard" })
 
 -- Similar, except cut/paste
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", "\"_d", { desc = "Cut into system clipboard" })
+vim.keymap.set("v", "<leader>d", "\"_d", { desc = "Cut selected text into system clipboard" })
