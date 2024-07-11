@@ -45,4 +45,5 @@ require("lazy").setup({
 
     require 'custom/plugins/oil',
 
+    require 'custom/plugins/markdown-preview',
 })

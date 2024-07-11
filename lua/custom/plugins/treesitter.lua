@@ -4,8 +4,8 @@ return {
         build = ":TSUpdate",
         opts = {
             ensure_installed = { "bash", "c", "html", "lua", "markdown", "vim", "vimdoc" },
-            -- Autoinstall languages that are not installed
             auto_install = true,
+            ignore_install = { "sql" },
             highlight = {
                 enable = true,
                 -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.

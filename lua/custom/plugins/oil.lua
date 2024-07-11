@@ -8,7 +8,7 @@ return {
             columns = { "icon" },
             keymaps = {
                 ["<C-h>"] = false,
-
+                ["<C-l>"] = false,
             },
             view_options = {
                 show_hidden = true,
