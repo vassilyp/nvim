@@ -19,6 +19,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Move highlighted text
 vim.keymap.set('v', "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text up with J" })
 vim.keymap.set('v', "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text down with K" })
 

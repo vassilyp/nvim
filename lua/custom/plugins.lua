@@ -29,13 +29,9 @@ require("lazy").setup({
 
     require 'custom/plugins/gitsigns',
 
-    -- require 'custom/plugins/nvim-cmp',
-
     require 'custom/plugins/which-key',
 
     require 'custom/plugins/telescope',
-
-    -- require 'custom/plugins/lspconfig',
 
     require 'custom/plugins/treesitter',
 
