@@ -11,6 +11,7 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
       { 'L3MON4D3/LuaSnip' },
       { 'saadparwaiz1/cmp_luasnip' },
       { "rafamadriz/friendly-snippets" },
@@ -66,6 +67,16 @@ return {
       local cmp = require('cmp')
       local cmp_format = require('lsp-zero').cmp_format({ details = true })
       local cmp_action = require('lsp-zero').cmp_action()
+      local luasnip = require('luasnip')
+
+      -- If you want insert `(` after select function or method item
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+      )
+
+      luasnip.config.setup({})
 
       require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -74,8 +85,10 @@ return {
           { name = 'nvim_lsp' },
           { name = 'buffer' },
           { name = 'luasnip' },
+          { name = 'nvim_lsp_signature_help' },
         },
         formatting = cmp_format,
+
 
         mapping = cmp.mapping.preset.insert({
           -- confirm completion
@@ -96,7 +109,7 @@ return {
 
         snippet = {
           expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
           end,
         },
 
