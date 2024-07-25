@@ -85,7 +85,7 @@ return {
       local cmp_action = require('lsp-zero').cmp_action()
       local luasnip = require('luasnip')
 
-      -- If you want insert `(` after select function or method item
+      -- If you want insert `()` after select function or method item
       local cmp_autopairs = require('nvim-autopairs.completion.cmp')
       cmp.event:on(
         'confirm_done',
@@ -93,7 +93,6 @@ return {
       )
 
       luasnip.config.setup({})
-
       require('luasnip.loaders.from_vscode').lazy_load()
 
       cmp.setup({
@@ -104,7 +103,6 @@ return {
           { name = 'nvim_lsp_signature_help' },
         },
         formatting = cmp_format,
-
 
         mapping = cmp.mapping.preset.insert({
           -- confirm completion
@@ -132,17 +130,6 @@ return {
         preselect = 'item',
         completion = {
           completeopt = 'menu,menuone,noinsert'
-        },
-      })
-
-
-      require('lspconfig').lua_ls.setup({
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-          },
         },
       })
     end
