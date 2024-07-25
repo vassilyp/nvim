@@ -2,5 +2,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("general")      -- general/global type settings
+require("general") -- general/global type settings
 require("custom")
