@@ -44,4 +44,6 @@ require("lazy").setup({
     require 'custom/plugins/markdown-preview',
 
     require 'custom/plugins/lsp',
+
+    require 'custom/plugins/lsp-signature',
 })
