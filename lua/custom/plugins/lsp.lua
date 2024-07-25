@@ -46,19 +46,35 @@ return {
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         map('<leader>f', vim.lsp.buf.format, '[F]ormat code')
 
-        -- Autoformatting
-        -- Might need https://lsp-zero.netlify.app/v3.x/language-server-configuration.html, search 'explicit setup'
+        -- Autoformatting on save
         lsp_zero.buffer_autoformat()
       end)
 
-      -- to learn how to use mason.nvim
-      -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+      -- NOTE: put server configuration here!
+      local servers = {
+        yamlls = {},
+        gopls = {},
+        lua_ls = {
+          settings = {
+            Lua = {
+              completion = {
+                callSnippet = 'Replace',
+              },
+            },
+          },
+        }
+      }
       require('mason').setup({})
       require('mason-lspconfig').setup({
-        ensure_installed = {},
+        ensure_installed = vim.tbl_keys(servers),
         handlers = {
           function(server_name)
-            require('lspconfig')[server_name].setup({})
+            local server = servers[server_name] or {}
+            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+            require('lspconfig')[server_name].setup(server)
           end,
         },
       })
@@ -107,7 +123,15 @@ return {
       })
 
 
-      require('lspconfig').lua_ls.setup({})
+      require('lspconfig').lua_ls.setup({
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = 'Replace',
+            },
+          },
+        },
+      })
     end
   },
 
