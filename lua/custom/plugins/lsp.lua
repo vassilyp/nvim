@@ -5,9 +5,7 @@ return {
       dependencies = {
          { 'williamboman/mason.nvim' },
          { 'williamboman/mason-lspconfig.nvim' },
-
          { 'neovim/nvim-lspconfig' },
-
          { 'hrsh7th/cmp-nvim-lsp' },
          { 'hrsh7th/nvim-cmp' },
          { 'hrsh7th/cmp-buffer' },
@@ -19,7 +17,7 @@ return {
       config = function()
          local lsp_zero = require('lsp-zero')
 
-         lsp_zero.on_attach(function(client, bufnr)
+         lsp_zero.on_attach(function(_, bufnr)
             -- see :help lsp-zero-keybindings
             -- to learn the available actions
             local map = function(keys, func, desc)
@@ -57,7 +55,6 @@ return {
 
             map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
             map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-            -- map('<leader>f', vim.lsp.buf.format, '[F]ormat code')
 
             -- Autoformatting on save
             lsp_zero.buffer_autoformat()
@@ -79,8 +76,10 @@ return {
                      },
                   },
                },
-            }
+            },
+            pylsp = {},
          }
+
          require('mason').setup({})
          require('mason-lspconfig').setup({
             ensure_installed = vim.tbl_keys(servers),
