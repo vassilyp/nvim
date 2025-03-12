@@ -77,6 +77,12 @@ return {
                   },
                },
             },
+            clangd = {
+               cmd = {
+                  "clangd",
+                  "fallback-style=webkit"
+               }
+            }
          }
 
          require('mason').setup({})
