@@ -30,6 +30,12 @@ return {
             map('gd', require('telescope.builtin').lsp_definitions,
                '[G]oto [D]efinition')
 
+            -- Hover over the word under the cursor (showing types, etc.)
+            map('K', vim.lsp.buf.hover, "Hover over word")
+
+            -- Rename the word under the cursor (hopefully across files)
+            map('gn', vim.lsp.buf.rename, "Re[n]ame")
+
             -- Find references for the word under your cursor.
             map('gr', require('telescope.builtin').lsp_references,
                '[G]oto [R]eferences')
@@ -53,11 +59,10 @@ return {
 
             map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-            map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
             map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
             -- Autoformatting on save
-            lsp_zero.buffer_autoformat()
+            -- lsp_zero.buffer_autoformat()
          end)
 
          local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -80,9 +85,10 @@ return {
             clangd = {
                cmd = {
                   "clangd",
-                  "fallback-style=webkit"
+                  "--fallback-style=webkit",
                }
-            }
+            },
+            ts_ls = {}
          }
 
          require('mason').setup({})
