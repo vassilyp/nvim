@@ -4,8 +4,8 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '[d', vim.diagnostic.get_prev, { desc = 'Go to previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.get_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -43,3 +43,5 @@ vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard
 -- Similar, except cut/paste
 vim.keymap.set("n", "<leader>d", "\"_d", { desc = "Cut into system clipboard" })
 vim.keymap.set("v", "<leader>d", "\"_d", { desc = "Cut selected text into system clipboard" })
+
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %", { desc = "Source the current file "} )
