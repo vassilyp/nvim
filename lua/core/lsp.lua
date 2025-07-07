@@ -16,3 +16,4 @@
 -- <leader>q for quickfix list (from keymaps)
 
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("editorconfig-checker")

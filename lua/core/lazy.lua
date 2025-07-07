@@ -19,7 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
    -- Commenting for ts/jsx
-   require 'plugins/ts-context-commentstring',
+   -- require 'plugins/ts-context-commentstring',
 
    require 'plugins/toggleterm',
 
@@ -43,5 +43,7 @@ require("lazy").setup({
 
    require 'plugins/mason',
 
-   require 'plugins/lspconfig'
+   require 'plugins/lspconfig',
+
+   require 'plugins/completion',
 })

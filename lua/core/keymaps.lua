@@ -44,4 +44,4 @@ vim.keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard
 vim.keymap.set("n", "<leader>d", "\"_d", { desc = "Cut into system clipboard" })
 vim.keymap.set("v", "<leader>d", "\"_d", { desc = "Cut selected text into system clipboard" })
 
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %", { desc = "Source the current file "} )
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source the current file " })
