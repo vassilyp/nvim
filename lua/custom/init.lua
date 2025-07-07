@@ -39,8 +39,6 @@ require("lazy").setup({
 
    require 'custom/plugins/oil',
 
-   require 'custom/plugins/lsp',
-
    require 'custom/plugins/dap',
 
 })
