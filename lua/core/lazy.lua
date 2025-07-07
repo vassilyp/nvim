@@ -41,4 +41,7 @@ require("lazy").setup({
 
    require 'plugins/dap',
 
+   require 'plugins/mason',
+
+   require 'plugins/lspconfig'
 })
