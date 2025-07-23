@@ -64,4 +64,8 @@ vim.opt.softtabstop    = 4
 vim.opt.expandtab      = true
 vim.opt.shiftwidth     = 4
 
+-- No .editorconfig support (TODO: might re-enable?)
 vim.g.editorconfig     = false
+
+-- Enable diagnostic virtual text
+vim.diagnostic.config({ virtual_text = true })

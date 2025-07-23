@@ -1,5 +1,5 @@
 return {
-   {  -- Highlight, edit, and navigate code
+   { -- Highlight, edit, and navigate code
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate",
       opts = {
@@ -18,7 +18,6 @@ return {
       config = function(_, opts)
          -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 
-         ---@diagnostic disable-next-line: missing-fields
          require("nvim-treesitter.configs").setup(opts, {
             indent = {
                disable = 'cpp',
