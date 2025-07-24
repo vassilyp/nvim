@@ -50,3 +50,6 @@ vim.keymap.set("v", "<leader>d", '"_d', { desc = "Cut selected text into system 
 
 -- Source the file
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source the current file " })
+
+-- Insert text
+vim.keymap.set("n", "<leader>da", "<cmd>pu=strftime('%c')<CR>", { desc = "Insert the current date " })
