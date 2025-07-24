@@ -1,8 +1,1 @@
-{
-  "nicedate": {
-    "prefix": "nicedate",
-    "body": [
-      "print('hello')"
-    ]
-  }
-}
+{}
