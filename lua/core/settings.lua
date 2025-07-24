@@ -68,4 +68,4 @@ vim.opt.shiftwidth = 4
 vim.g.editorconfig = false
 
 -- Enable diagnostic virtual text
-vim.diagnostic.config({ virtual_lines = true })
+vim.diagnostic.config({ virtual_text = true })

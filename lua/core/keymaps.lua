@@ -53,3 +53,6 @@ vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source t
 
 -- Insert text
 vim.keymap.set("n", "<leader>da", "<cmd>pu=strftime('%c')<CR>", { desc = "Insert the current date " })
+
+-- Go to definition (lsp)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })

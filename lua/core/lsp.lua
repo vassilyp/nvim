@@ -3,6 +3,7 @@
 --
 -- Current functionality:
 --  CTRL+] to go to definition (CTRL+T to go back)
+--      CAN ALSO USE gd (from keymaps)
 --  K for hover signature
 --  grn for LSP rename
 --  gra for LSP code action
