@@ -2,15 +2,15 @@
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-   vim.fn.system({
-      "git",
-      "clone",
-      "--filter=blob:none",
-      "--branch=stable",
-      lazyrepo,
-      lazypath,
-   })
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--branch=stable",
+		lazyrepo,
+		lazypath,
+	})
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
@@ -18,36 +18,31 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-   -- Commenting for ts/jsx
-   -- require 'plugins/ts-context-commentstring',
+	require("plugins/toggleterm"),
 
-   require 'plugins/toggleterm',
+	require("plugins/colorscheme"),
 
-   require 'plugins/colorscheme',
+	require("plugins/autopairs"),
 
-   require 'plugins/autopairs',
+	require("plugins/gitsigns"),
 
-   require 'plugins/gitsigns',
+	require("plugins/which-key"),
 
-   require 'plugins/which-key',
+	require("plugins/telescope"),
 
-   require 'plugins/telescope',
+	require("plugins/treesitter"),
 
-   require 'plugins/treesitter',
+	require("plugins/mini"),
 
-   require 'plugins/mini',
+	require("plugins/oil"),
 
-   require 'plugins/oil',
+	require("plugins/mason"),
 
-   require 'plugins/dap',
+	require("plugins/lspconfig"),
 
-   require 'plugins/mason',
+	require("plugins.blink"),
 
-   require 'plugins/lspconfig',
+	require("plugins/conform"),
 
-   require 'plugins/completion',
-
-   require 'plugins/conform',
-
-   require 'plugins/render-markdown',
+	require("plugins/render-markdown"),
 })
