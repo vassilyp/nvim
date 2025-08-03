@@ -23,7 +23,8 @@ local vue_plugin = {
 	languages = { "vue" },
 	configNamespace = "typescript",
 }
-local vtsls_config = {
+
+vim.lsp.config("vtsls", {
 	settings = {
 		vtsls = {
 			tsserver = {
@@ -34,10 +35,11 @@ local vtsls_config = {
 		},
 	},
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-}
+	root_markers = { { "package.json", ".git" } },
+})
 
 -- see https://github.com/vuejs/language-tools/wiki/Neovim (mason route)
-local vue_ls_config = {
+vim.lsp.config("vue_ls", {
 	on_init = function(client)
 		client.handlers["tsserver/request"] = function(_, result, context)
 			local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
@@ -66,14 +68,13 @@ local vue_ls_config = {
 			end)
 		end
 	end,
-}
-
-vim.lsp.config("vtsls", vtsls_config)
-vim.lsp.config("vue_ls", vue_ls_config)
+})
 
 vim.lsp.enable({
 	"lua_ls",
 	"vtsls",
 	"vue_ls",
 	"jsonls",
+	"glsl_analyzer",
+	"html",
 })
