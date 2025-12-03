@@ -70,6 +70,24 @@ vim.lsp.config("vue_ls", {
 	end,
 })
 
+vim.lsp.config("ruby-lsp", {
+	filetypes = { "ruby" },
+
+	cmd = { "ruby-lsp" },
+
+	root_markers = { "Gemfile", ".git" },
+
+	init_options = {
+		formatter = "standard",
+		linters = { "standard" },
+		addonSettings = {
+			["Ruby LSP Rails"] = {
+				enablePendingMigrationsPrompt = false,
+			},
+		},
+	},
+})
+
 vim.lsp.enable({
 	"lua_ls",
 	"vtsls",
@@ -77,4 +95,7 @@ vim.lsp.enable({
 	"jsonls",
 	"glsl_analyzer",
 	"html",
+	"gopls",
+	"ruby-lsp",
+	"herb_ls",
 })
