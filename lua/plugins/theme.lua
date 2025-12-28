@@ -1,0 +1,1 @@
+/home/vassilyp/.config/omarchy/current/theme/neovim.lua
