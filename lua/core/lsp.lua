@@ -2,100 +2,96 @@
 -- :help lsp
 --
 -- Current functionality:
---  CTRL+] to go to definition (CTRL+T to go back)
---      CAN ALSO USE gd (from keymaps)
 --  K for hover signature
 --  grn for LSP rename
 --  gra for LSP code action
---  grr for LSP references (?)
---  gri for LSP implementation (?)
---  gO for LSP document symbol (?)
+--  grr for LSP references/usages
 --  CTRL-S for signature help while in insert mode
 --
 --  <leader>e for float error (from keymaps)
 --  <leader>q for quickfix list (from keymaps)
 
 local vue_language_server_path = vim.fn.stdpath("data")
-	.. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+    .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
 local vue_plugin = {
-	name = "@vue/typescript-plugin",
-	location = vue_language_server_path,
-	languages = { "vue" },
-	configNamespace = "typescript",
+    name = "@vue/typescript-plugin",
+    location = vue_language_server_path,
+    languages = { "vue" },
+    configNamespace = "typescript",
 }
 
 vim.lsp.config("vtsls", {
-	settings = {
-		vtsls = {
-			tsserver = {
-				globalPlugins = {
-					vue_plugin,
-				},
-			},
-		},
-	},
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	root_markers = { { "package.json", ".git" } },
+    settings = {
+        vtsls = {
+            tsserver = {
+                globalPlugins = {
+                    vue_plugin,
+                },
+            },
+        },
+    },
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+    root_markers = { { "package.json", ".git" } },
 })
 
 -- see https://github.com/vuejs/language-tools/wiki/Neovim (mason route)
 vim.lsp.config("vue_ls", {
-	on_init = function(client)
-		client.handlers["tsserver/request"] = function(_, result, context)
-			local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
-			if #clients == 0 then
-				vim.notify(
-					"Could not find `vtsls` lsp client, `vue_ls` would not work without it.",
-					vim.log.levels.ERROR
-				)
-				return
-			end
-			local ts_client = clients[1]
+    on_init = function(client)
+        client.handlers["tsserver/request"] = function(_, result, context)
+            local clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = "vtsls" })
+            if #clients == 0 then
+                vim.notify(
+                    "Could not find `vtsls` lsp client, `vue_ls` would not work without it.",
+                    vim.log.levels.ERROR
+                )
+                return
+            end
+            local ts_client = clients[1]
 
-			local param = unpack(result)
-			local id, command, payload = unpack(param)
-			ts_client:exec_cmd({
-				title = "vue_request_forward", -- You can give title anything as it's used to represent a command in the UI, `:h Client:exec_cmd`
-				command = "typescript.tsserverRequest",
-				arguments = {
-					command,
-					payload,
-				},
-			}, { bufnr = context.bufnr }, function(_, r)
-				local response_data = { { id, r.body } }
-				---@diagnostic disable-next-line: param-type-mismatch
-				client:notify("tsserver/response", response_data)
-			end)
-		end
-	end,
+            local param = unpack(result)
+            local id, command, payload = unpack(param)
+            ts_client:exec_cmd({
+                title = "vue_request_forward", -- You can give title anything as it's used to represent a command in the UI, `:h Client:exec_cmd`
+                command = "typescript.tsserverRequest",
+                arguments = {
+                    command,
+                    payload,
+                },
+            }, { bufnr = context.bufnr }, function(_, r)
+                local response_data = { { id, r.body } }
+                ---@diagnostic disable-next-line: param-type-mismatch
+                client:notify("tsserver/response", response_data)
+            end)
+        end
+    end,
 })
 
 vim.lsp.config("ruby-lsp", {
-	filetypes = { "ruby" },
+    filetypes = { "ruby" },
 
-	cmd = { "ruby-lsp" },
+    cmd = { "ruby-lsp" },
 
-	root_markers = { "Gemfile", ".git" },
+    root_markers = { "Gemfile", ".git" },
 
-	init_options = {
-		formatter = "standard",
-		linters = { "standard" },
-		addonSettings = {
-			["Ruby LSP Rails"] = {
-				enablePendingMigrationsPrompt = false,
-			},
-		},
-	},
+    init_options = {
+        formatter = "standard",
+        linters = { "standard" },
+        addonSettings = {
+            ["Ruby LSP Rails"] = {
+                enablePendingMigrationsPrompt = false,
+            },
+        },
+    },
 })
 
 vim.lsp.enable({
-	"lua_ls",
-	"vtsls",
-	"vue_ls",
-	"jsonls",
-	"glsl_analyzer",
-	"html",
-	"gopls",
-	"ruby-lsp",
-	"herb_ls",
+    "lua_ls",
+    "vtsls",
+    "vue_ls",
+    "jsonls",
+    "glsl_analyzer",
+    "html",
+    "gopls",
+    "ruby-lsp",
+    "herb_ls",
 })
