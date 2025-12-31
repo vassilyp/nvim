@@ -51,5 +51,7 @@ map("v", "<leader>d", '"_d', { desc = "Cut selected text into system clipboard" 
 -- Source the file
 map("n", "<leader>x", "<cmd>source %<CR>", { desc = "Source the current file" })
 
--- Insert text
+-- Insert options
 map("n", "<leader>id", "<cmd>pu=strftime('%c')<CR>", { desc = "Insert the current date" })
+
+map("n", "<leader>cl", "<cmd>LspInfo<CR>", { desc = "Open LspInfo" })

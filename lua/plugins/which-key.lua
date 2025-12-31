@@ -7,7 +7,8 @@ return {
             spec = {
                 { "<leader>s", desc = "Search" },
                 { "<leader>i", desc = "Insert" },
-                { "<leader>h", desc = "Git hunk" }
+                { "<leader>h", desc = "Git hunk" },
+                { "<leader>c", desc = "Code" }
             }
         },
         keys = {
