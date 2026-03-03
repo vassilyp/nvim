@@ -1,4 +1,6 @@
-nvim config!
+# My nvim configuration!
+
+## Installation
 
 To use this configuration, you can do the following:
 1. If you haven't already, install Neovim: https://github.com/neovim/neovim/blob/master/INSTALL.md
@@ -8,3 +10,10 @@ To use this configuration, you can do the following:
 Make sure the resultant file path is ~/.config/nvim or Windows equivalent (NOTE: if you changed $XDG_CONFIG, you are on your own with finding the correct file path) 
 
 4. Run Neovim: `nvim`
+
+## Wishlist
+
+These are things my configuration is still missing:
+
+1. Reliable debugging (currently setting up nvim.dap)
+2. Fuzzy search git hunks.
