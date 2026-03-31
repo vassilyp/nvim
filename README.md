@@ -17,3 +17,4 @@ These are things my configuration is still missing:
 
 1. Reliable debugging (currently setting up nvim.dap)
 2. Fuzzy search git hunks.
+3. Easier/better date insertion for text files (e.g. type "date" or "today")

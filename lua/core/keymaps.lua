@@ -1,5 +1,3 @@
--- This is for shortcuts to do things quicker! (Not plugin specific)
-
 local map = vim.keymap.set
 
 -- Clear highlight with Escape in normal mode
@@ -10,6 +8,8 @@ map("n", "[d", vim.diagnostic.get_prev, { desc = "Previous diagnostic" })
 map("n", "]d", vim.diagnostic.get_next, { desc = "Next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show error message" })
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Quickfix list" })
+-- :lcl to close location list. Would love to set the above as a toggle instead.
+-- Also, there's already a telescope command for picking from quickfix (sd)
 
 -- Resize windows easier
 map("n", "<C-Up>", "<C-w>+2", { desc = "Increase window height" })
