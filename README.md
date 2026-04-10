@@ -3,11 +3,17 @@
 ## Installation
 
 To use this configuration, you can do the following:
-1. If you haven't already, install Neovim: https://github.com/neovim/neovim/blob/master/INSTALL.md
-2. Make or navigate to the \~/.config/ folder (\~/AppData/Local/ on Windows): https://neovim.io/doc/user/starting.html#config
-3. Clone this repo: `git clone https://github.com/vassilyp/nvim` or `git clone git@github.com:vassilyp/nvim.git`
+1. If you haven't already, install Neovim: 
+https://github.com/neovim/neovim/blob/master/INSTALL.md
+2. Make or navigate to the \~/.config/ folder (\~/AppData/Local/ on Windows):
+https://neovim.io/doc/user/starting.html#config
+3. Clone this repo: 
+`git clone https://github.com/vassilyp/nvim` or 
+`git clone git@github.com:vassilyp/nvim.git`
 
-Make sure the resultant file path is ~/.config/nvim or Windows equivalent (NOTE: if you changed $XDG_CONFIG, you are on your own with finding the correct file path) 
+Make sure the resultant file path is ~/.config/nvim or Windows equivalent 
+(NOTE: if you changed $XDG_CONFIG, you are on your own 
+with finding the correct file path) 
 
 4. Run Neovim: `nvim`
 
@@ -18,3 +24,5 @@ These are things my configuration is still missing:
 1. Reliable debugging (currently setting up nvim.dap)
 2. Fuzzy search git hunks.
 3. Easier/better date insertion for text files (e.g. type "date" or "today")
+4. Better behavior for quickfix - I always have to switch windows back n forth
+   myself.
