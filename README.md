@@ -21,8 +21,6 @@ with finding the correct file path)
 
 These are things my configuration is still missing:
 
-1. Reliable debugging (currently setting up nvim.dap)
-2. Fuzzy search git hunks.
-3. Easier/better date insertion for text files (e.g. type "date" or "today")
-4. Better behavior for quickfix - I always have to switch windows back n forth
-   myself.
+1. Fuzzy search git hunks.
+2. Better behavior for quickfix - I always have to switch windows back n forth myself.
+3. Better notifications behavior - don't block UI

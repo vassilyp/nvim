@@ -53,5 +53,3 @@ map("n", "<leader>x", "<cmd>source %<CR>", { desc = "Source the current file" })
 
 -- Insert options
 map("n", "<leader>id", "<cmd>pu=strftime('%c')<CR>", { desc = "Insert the current date" })
-
-map("n", "<leader>cl", "<cmd>LspInfo<CR>", { desc = "Open LspInfo" })
