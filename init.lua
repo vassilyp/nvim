@@ -22,10 +22,12 @@ vim.opt.undofile = true
 vim.opt.textwidth = 80
 vim.opt.linebreak = true
 vim.opt.wildoptions:append { 'fuzzy' }	-- fuzzy cmd search
+vim.opt.path:append {'.', '**'}		-- find recursively
 
 vim.opt.winborder = 'rounded'
 vim.opt.pumborder = 'rounded'
 
+vim.opt.scrolloff = 10
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function() vim.highlight.on_yank() end,
@@ -34,29 +36,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.cmd.colorscheme('catppuccin') -- Colorscheme
 
--- LSP
-vim.lsp.enable('basedpyright')
-
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(args)
-	local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-	if client:supports_method('textDocument/completion') then
-	    vim.o.complete = 'o,.,w,b,u'
-	    vim.o.completeopt = 'menu,menuone,popup,noinsert'
-	    vim.lsp.completion.enable(true, client.id, args.buf)
-	end
-    end
-})
-
 -- Keymaps
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") 	-- Clear highlight easily
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")		-- Easy terminal mode exit
-vim.keymap.set("n", "<CTRL-\\", "<cmd>term<CR>")	-- Open terminal
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc= "Clear highlight easily"})
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {desc= "Easier terminal mode exit"})
+vim.keymap.set("n", "<leader>st", function() 
+    vim.cmd.vnew()
+    vim.cmd.term()
+end)
 
-vim.keymap.set("n", "[d", vim.diagnostic.get_prev, { desc = "Previous diagnostic" })
-vim.keymap.set("n", "]d", vim.diagnostic.get_next, { desc = "Next diagnostic" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show error message" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Quickfix list" })
+-- vim.api.nvim_create_user_command('TermHl', function()
+--   vim.fn.jobstart({ 'term': 'v:true' })
+-- end, { desc = 'Highlights ANSI termcodes in curbuf' })
 
 -- Easier split navigation and control
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })

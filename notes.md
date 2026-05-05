@@ -6,6 +6,4 @@ CTRL-^ Edit alternate (previous) file
 
 cCTRL-F opens cmd history
 
-checkout lsp global defaults e.g. :h grn
-
 git add -i
