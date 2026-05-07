@@ -1,9 +1,9 @@
-# Fun commands I learned 
+# Fun commands I learned
 
-^W+d opens lsp diagnostics 
+^W+d opens lsp diagnostics
 
-CTRL-^ Edit alternate (previous) file 
+CTRL-^ Edit alternate (previous) file
 
 cCTRL-F opens cmd history
 
-git add -i
+Git interactive mode: git add -i
