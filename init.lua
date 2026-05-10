@@ -11,6 +11,8 @@ vim.pack.add {
     'https://github.com/nvim-telescope/telescope.nvim',
     'https://github.com/nvim-lua/plenary.nvim',
 
+    'https://github.com/lewis6991/gitsigns.nvim',
+
     'https://github.com/neanias/everforest-nvim',
     'https://github.com/brenoprata10/nvim-highlight-colors',
 }
@@ -30,6 +32,23 @@ require('nvim-highlight-colors').setup({
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Telescope search files' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Telescope search by grep' })
+
+-- Gitsigns.nvim
+local gitsigns = require('gitsigns')
+gitsigns.setup({
+    signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+    }
+})
+vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "Git reset hunk" })
+vim.keymap.set("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Git preview hunk" })
+vim.keymap.set("n", "<leader>hb", gitsigns.toggle_current_line_blame, { desc = "Git toggle line blame" })
+
+-- TODO: add conform.nvim
 
 -- OPTIONS
 
