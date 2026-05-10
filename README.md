@@ -31,3 +31,9 @@ with finding the correct file path)
 2. Autoformat on save
 3. gitsigns
 4. Telescope
+
+
+# Misc notes
+
+Auto format (without conform.nvim)
+https://stackoverflow.com/questions/77466697/how-to-automatically-format-on-save
