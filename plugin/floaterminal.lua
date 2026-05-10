@@ -52,9 +52,14 @@ local toggle_terminal = function()
 end
 
 -- Start terminal in insert mode
-vim.api.nvim_create_autocmd("TermEnter", {
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = vim.api.nvim_create_augroup("terminal", { clear = true }),
     pattern = "*",
-    command = "startinsert",
+    callback = function()
+        if vim.bo.filetype == "terminal" then
+            vim.cmd('startinsert')
+        end
+    end,
 })
 
 -- Create :Floaterminal command
@@ -63,7 +68,7 @@ vim.api.nvim_create_user_command("Floaterminal",
     { desc="Toggles floating terminal buffer" }
 )
 
--- Assign :Floaterminal to keymap
+-- Floaterminal keymap
 vim.keymap.set("n", "<leader>st",
     toggle_terminal,
     { desc="See Terminal", noremap=true }
