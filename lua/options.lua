@@ -13,6 +13,7 @@ vim.opt.softtabstop = 4 -- Disable soft tab stops
 vim.opt.shiftwidth = 0 -- Indent width (use tabstop value)
 vim.opt.expandtab = true -- Spaces instead of tabs
 vim.opt.smartindent = true -- Smart auto-indent
+vim.opt.textwidth = 80 -- Wrap lines past 80 characters
 
 -- Search settings
 vim.opt.ignorecase = true -- Case insensitive search
@@ -33,7 +34,7 @@ vim.opt.matchtime = 2 -- How long to show matching bracket
 vim.opt.showmode = true -- Show mode in command line
 vim.opt.pumheight = 10 -- Popup menu height
 vim.opt.completeopt = "menu,menuone,noselect"
-vim.opt.conceallevel = 2 -- Adjusts concealable chars behavior
+vim.opt.conceallevel = 0 -- Adjusts concealable chars behavior
 vim.opt.confirm = true -- Prompt save on buffer exit
 vim.opt.linebreak = true -- Wrap lines at convenient places
 vim.opt.winborder = "rounded" -- Window border styling
