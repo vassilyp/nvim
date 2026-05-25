@@ -36,3 +36,6 @@ vim.keymap.set("v", "<leader>y", '"+y', { desc = "Copy selected text to system c
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard" })
 vim.keymap.set("n", "<leader>d", '"_d', { desc = "Cut into system clipboard" })
 vim.keymap.set("v", "<leader>d", '"_d', { desc = "Cut selected text into system clipboard" })
+
+-- Toggle virtual text diagnostics
+vim.keymap.set("n", "<leader>ld", "<cmd>DiagnosticsToggle<cr>", { desc = "Toggle diagnostics" })
