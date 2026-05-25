@@ -37,3 +37,6 @@ with finding the correct file path)
 
 Auto format (without conform.nvim)
 https://stackoverflow.com/questions/77466697/how-to-automatically-format-on-save
+
+To delete cache:
+rm -rf ~/.local/share/nvim
