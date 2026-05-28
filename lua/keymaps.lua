@@ -39,3 +39,9 @@ vim.keymap.set("v", "<leader>d", '"_d', { desc = "Cut selected text into system 
 
 -- Toggle virtual text diagnostics
 vim.keymap.set("n", "<leader>ld", "<cmd>DiagnosticsToggle<cr>", { desc = "Toggle diagnostics" })
+vim.keymap.set(
+    "n",
+    "<leader>e",
+    "<cmd>lua vim.diagnostic.open_float()<cr>",
+    { desc = "Open diagnostic floating window" }
+)
