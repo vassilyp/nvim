@@ -9,6 +9,9 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+-- Easier ':' press
+vim.keymap.set("n", "<leader>;", ":", { desc = "Shortcut to press colon (:)" })
+
 -- Better terminal exit
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Easier terminal mode exit" })
 
@@ -37,7 +40,7 @@ vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Copy line to system clipboard"
 vim.keymap.set("n", "<leader>d", '"_d', { desc = "Cut into system clipboard" })
 vim.keymap.set("v", "<leader>d", '"_d', { desc = "Cut selected text into system clipboard" })
 
--- Toggle virtual text diagnostics
+-- Diagnostic keymaps
 vim.keymap.set("n", "<leader>ld", "<cmd>DiagnosticsToggle<cr>", { desc = "Toggle diagnostics" })
 vim.keymap.set(
     "n",
