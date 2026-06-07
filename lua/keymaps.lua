@@ -48,3 +48,6 @@ vim.keymap.set(
     "<cmd>lua vim.diagnostic.open_float()<cr>",
     { desc = "Open diagnostic floating window" }
 )
+
+-- LSP go to definition
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr> zz", { desc = "Go to definition" })

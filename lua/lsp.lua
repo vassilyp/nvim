@@ -6,4 +6,5 @@ end, { desc = "Toggle LSP diagnostics" })
 vim.lsp.enable({
     "vtsls",
     "gopls",
+    "lua_ls",
 })
