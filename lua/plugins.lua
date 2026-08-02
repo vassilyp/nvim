@@ -58,5 +58,6 @@ require("conform").setup({
         javascript = { "prettierd", "prettier", stop_after_first = true },
         typescript = { "prettierd", "prettier", stop_after_first = true },
         go = { "gofmt" },
+        c = { "clang-format" },
     },
 })
