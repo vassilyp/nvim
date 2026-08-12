@@ -96,7 +96,7 @@ end
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, { desc = "Toggles floating terminal buffer" })
 
 -- Floaterminal keymap
-vim.keymap.set("n", "<leader>st", "<cmd>Floaterminal<cr>", { desc = "See Terminal", noremap = true })
+vim.keymap.set("n", "<leader>t", "<cmd>Floaterminal<cr>", { desc = "See Terminal", noremap = true })
 
 -- Start terminal in insert
 -- vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
