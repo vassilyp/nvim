@@ -1,11 +1,10 @@
 local snippets = {
     all = {},
     lua = {
-        test = "Hello world!",
+        hello = "Hello world!",
     },
-
     html = {
-        tag = "<$1 $2>$0</$1>",
+        ["<>"] = "<$1 $2>$0</$1>",
     },
 }
 
