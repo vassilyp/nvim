@@ -52,7 +52,7 @@ vim.opt.autoread = true -- Auto reload files outside nvim
 vim.opt.updatetime = 300 -- Faster completion
 vim.opt.splitbelow = true -- New split placed below
 vim.opt.splitright = true -- New split placed to the right
-vim.opt.iskeyword:append("-") -- Treat dash as part of word
+-- vim.opt.iskeyword:append("-") -- Treat dash as part of word
 
 -- Search settings (grep, find) (idk if I'm even using this)
 vim.opt.grepprg = "rg --vimgrep --no-messages --smart-case"
