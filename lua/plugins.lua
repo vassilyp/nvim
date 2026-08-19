@@ -29,6 +29,24 @@ require("nvim-highlight-colors").setup({
 })
 
 -- Telescope.nvim
+require("telescope").setup({
+    defaults = {
+        file_ignore_patterns = {
+            "^.git/",
+        },
+    },
+    pickers = {
+        find_files = {
+            hidden = true,
+            no_ignore = true,
+        },
+        live_grep = {
+            hidden = true,
+            no_ignore = true,
+        },
+    },
+})
+
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope search files" })
 vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope search by grep" })
