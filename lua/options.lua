@@ -40,7 +40,7 @@ vim.opt.linebreak = true -- Wrap lines at convenient places
 vim.opt.winborder = "rounded" -- Window border styling
 vim.opt.pumborder = "rounded" -- Popup window border styling
 vim.opt.list = true -- Characters for different whitespace
-vim.opt.listchars = "tab:│ ,trail:·,nbsp:·"
+vim.opt.listchars = "tab:▏ ,trail:·,nbsp:·"
 
 -- File handling settings
 vim.opt.swapfile = false -- No swap files
