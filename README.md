@@ -24,6 +24,7 @@ with finding the correct file path)
 - cCTRL-F:  opens cmd history
 - git add -i: Interactive git mode
 - g< and :messages: observe previous notification(s)
+- ":cd %:h": Set directory to current file's directory
 
 # Plugins to replace eventually (in order)
 
@@ -40,3 +41,4 @@ https://stackoverflow.com/questions/77466697/how-to-automatically-format-on-save
 
 To delete cache:
 rm -rf ~/.local/share/nvim
+
