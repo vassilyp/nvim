@@ -54,10 +54,20 @@ vim.opt.splitbelow = true -- New split placed below
 vim.opt.splitright = true -- New split placed to the right
 -- vim.opt.iskeyword:append("-") -- Treat dash as part of word
 
--- Search settings (grep, find) (idk if I'm even using this)
-vim.opt.grepprg = "rg --vimgrep --no-messages --smart-case"
-vim.opt.wildoptions:append("fuzzy") -- fuzzy cmd search
+vim.opt.grepprg = "rg --vimgrep --smart-case --hidden "
+    .. "--glob '!node_modules' "
+    .. "--glob '!.git' "
+    .. "--glob '!dist' "
+    .. "--glob '!build'"
 vim.opt.path:append({ "**" }) -- Find recursively
+vim.opt.wildoptions:append("fuzzy") -- fuzzy cmd search
+vim.opt.wildignore:append({
+    "*/node_modules/*",
+    "*/dist/*",
+    "*/build/*",
+    "*/target/*",
+    "*/.git/*",
+})
 
 -- Better diffs (align changes up to 60 line hunks)
 vim.opt.diffopt:append("linematch:60")
