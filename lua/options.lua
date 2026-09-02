@@ -68,6 +68,7 @@ vim.opt.wildignore:append({
     "*/target/*",
     "*/.git/*",
 })
+vim.opt.wildmode = "noselect:full"
 
 -- Better diffs (align changes up to 60 line hunks)
 vim.opt.diffopt:append("linematch:60")
