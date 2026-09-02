@@ -58,8 +58,11 @@ vim.keymap.set("n", "<leader>g", function()
         vim.cmd("cclose")
         return
     end
-    vim.cmd("silent grep! " .. vim.fn.input("Grep > "))
-    vim.cmd("copen")
+    local input = vim.fn.input("Grep > ")
+    if input ~= "" then
+        vim.cmd("silent grep! " .. input)
+        vim.cmd("copen")
+    end
 end)
 
 -- Find shortcut
