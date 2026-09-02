@@ -61,3 +61,6 @@ vim.keymap.set("n", "<leader>g", function()
     vim.cmd("silent grep! " .. vim.fn.input("Grep > "))
     vim.cmd("copen")
 end)
+
+-- Find shortcut
+vim.keymap.set("n", "<leader>f", ":find ", { desc = "Find shortcut" })
