@@ -52,8 +52,12 @@ vim.keymap.set(
 -- LSP go to definition
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr> zz", { desc = "Go to definition" })
 
--- Grep shortcut
+-- Grep shortcut (use ]q or [q to navigate)
 vim.keymap.set("n", "<leader>g", function()
+    if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+        vim.cmd("cclose")
+        return
+    end
     vim.cmd("silent grep! " .. vim.fn.input("Grep > "))
     vim.cmd("copen")
 end)

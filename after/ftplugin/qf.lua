@@ -10,8 +10,6 @@
 --     end,
 -- })
 
-local buf = vim.api.nvim_get_current_buf()
-
 local function preview_entry()
     local qf_window = vim.api.nvim_get_current_win()
     local line_number = vim.fn.line(".")
