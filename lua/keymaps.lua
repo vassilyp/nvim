@@ -66,4 +66,7 @@ vim.keymap.set("n", "<leader>g", function()
 end)
 
 -- Find shortcut
-vim.keymap.set("n", "<leader>f", ":find ", { desc = "Find shortcut" })
+vim.keymap.set("n", "<leader>f", ":find ", { desc = ":find typing shortcut" })
+
+-- Open quickfix shortcut
+vim.keymap.set("n", "<leader>q", "<CMD>copen<CR>", { desc = "Open quickfix list" })
