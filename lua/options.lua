@@ -52,9 +52,8 @@ vim.opt.autoread = true -- Auto reload files outside nvim
 vim.opt.updatetime = 300 -- Faster completion
 vim.opt.splitbelow = true -- New split placed below
 vim.opt.splitright = true -- New split placed to the right
--- vim.opt.iskeyword:append("-") -- Treat dash as part of word
 
-vim.opt.grepprg = "rg --vimgrep --smart-case --hidden "
+vim.opt.grepprg = "rg --vimgrep --smart-case --hidden --fixed-strings "
     .. "--glob '!node_modules' "
     .. "--glob '!.git' "
     .. "--glob '!dist' "
