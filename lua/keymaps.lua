@@ -69,4 +69,11 @@ end)
 vim.keymap.set("n", "<leader>f", ":find ", { desc = ":find typing shortcut" })
 
 -- Open quickfix shortcut
-vim.keymap.set("n", "<leader>q", "<CMD>copen<CR>", { desc = "Open quickfix list" })
+vim.keymap.set("n", "<leader>q", function()
+    if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
+        vim.cmd("cclose")
+        return
+    else
+        vim.cmd("copen")
+    end
+end, { desc = "Open quickfix list" })
