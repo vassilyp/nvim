@@ -52,8 +52,9 @@ require("telescope").setup({
 })
 
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope search files" })
-vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope search by grep" })
+vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Telescope search files" })
+vim.keymap.set("n", "<leader>g", builtin.live_grep, { desc = "Telescope search by grep" })
+-- NOTE: CTRL-Q sends selection to quickfix list
 
 -- Gitsigns.nvim
 local gitsigns = require("gitsigns")

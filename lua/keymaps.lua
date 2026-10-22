@@ -9,6 +9,9 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+vim.keymap.set("n", "<leader>v", "<cmd>vsp<cr>", { desc = "Split right" })
+vim.keymap.set("n", "<leader>`", "<cmd>cd ~<cr>", { desc = "cd to home"})
+
 -- Easier ':' press
 vim.keymap.set("n", "<leader>;", ":", { desc = "Shortcut to press colon (:)" })
 
@@ -51,22 +54,6 @@ vim.keymap.set(
 
 -- LSP go to definition
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr> zz", { desc = "Go to definition" })
-
--- Grep shortcut (use ]q or [q to navigate)
-vim.keymap.set("n", "<leader>g", function()
-    if vim.fn.getqflist({ winid = 0 }).winid ~= 0 then
-        vim.cmd("cclose")
-        return
-    end
-    local input = vim.fn.input("Grep > ")
-    if input ~= "" then
-        vim.cmd("silent grep! " .. input)
-        vim.cmd("copen")
-    end
-end)
-
--- Find shortcut
-vim.keymap.set("n", "<leader>f", ":find ", { desc = ":find typing shortcut" })
 
 -- Open quickfix shortcut
 vim.keymap.set("n", "<leader>q", function()
